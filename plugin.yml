@@ -1,0 +1,71 @@
+name: HCF
+main: hcf\HCF
+version: "1.0.0"
+api: 4.0.0
+authors:
+  - xZolpha, xVenetiq, xAtomic, Unickorn, adeynes & TPE<3
+description: We strive to be the best, each and every day!
+depend:
+  - PearlSysten
+  - CustomEnchants
+permissions:
+  compass.disabled:
+    default: false
+  craft.permission:
+    default: op
+  permission.staff:
+    default: op
+  disguise.permission:
+    default: op
+  permission.mod:
+    default: op
+  kitreset.perm:
+    default: op
+  lastinv.perm:
+    default: op
+  near.cmd:
+    default: op
+  nick.permission:
+    default: op
+  permission.pcmds:
+    default: op
+  permission.allowspam:
+    default: op
+  admin.permission:
+    default: op
+  votetext.command:
+    default: op
+  fadmin.commands:
+    default: op
+  cucumber.command.ban:
+    default: op
+  cucumber.command.banlist:
+    default: op
+  cucumber.command.pardon:
+    default: op
+  cucumber.command.unbanall:
+    default: op
+  cucumber.command.blacklist:
+    default: op
+  cucumber.command.showblacklist:
+    default: op
+  cucumber.command.unblacklist:
+    default: op
+  cucumber.command.unblacklistall:
+    default: op
+  cucumber.command.mute:
+    default: op
+  cucumber.command.unmute:
+    default: op
+  cucumber.command.unmuteall:
+    default: op
+  cucumber.command.mutelist:
+    default: op
+  cucumber.command.history:
+    default: op
+  cucumber.command.alts:
+    default: op
+  koth.commands:
+    default: op
+  killtext.command:
+    default: op

@@ -1,0 +1,211 @@
+{
+  "blueprints": {
+    "blank": {
+      "arguments": {},
+      "flags": {}
+    },
+
+    "one-player-argument": {
+      "arguments": {
+        "player": {
+          "length": 1,
+          "display": "Player",
+          "optional": false
+        }
+      },
+      "flags": {}
+    },
+
+    "paginated": {
+      "arguments": {
+        "page": {
+          "length": 1,
+          "display": "Page",
+          "optional": true
+        }
+      },
+      "flags": {}
+    },
+
+    "paginated-allable": {
+      "arguments": {
+        "page": {
+          "length": 1,
+          "display": "Page",
+          "optional": true
+        }
+      },
+      "flags": {
+        "all": {
+          "length": 0,
+          "display": "Show all?",
+          "aliases": ["a"]
+        }
+      }
+    },
+
+    "player-punish": {
+      "arguments": {
+        "player": {
+          "length": 1,
+          "display": "Player",
+          "optional": false
+        },
+        "duration": {
+          "length": 1,
+          "display": "Duration (\"inf\" for permanent)",
+          "optional": false
+        },
+        "reason": {
+          "length": -1,
+          "display": "Reason",
+          "optional": true
+        }
+      },
+      "flags": {
+        "silent": {
+          "length": 0,
+          "display": "No chat message?",
+          "aliases": ["s"]
+        }
+      }
+    },
+
+    "ip-punish": {
+      "arguments": {
+        "target": {
+          "length": 1,
+          "display": "Player/IP",
+          "optional": false
+        },
+        "duration": {
+          "length": 1,
+          "display": "Duration (\"inf\" for permanent)",
+          "optional": false
+        },
+        "reason": {
+          "length": -1,
+          "display": "Reason",
+          "optional": true
+        }
+      },
+      "flags": {
+        "silent": {
+          "length": 0,
+          "display": "No chat message?",
+          "aliases": ["s"]
+        }
+      }
+    },
+
+    "ip-pardon": {
+      "arguments": {
+        "target": {
+          "length": 1,
+          "display": "Player/IP",
+          "optional": false
+        }
+      },
+      "flags": {}
+    },
+
+    "unpunish-all": {
+      "arguments": {},
+      "flags":{
+        "silent": {
+          "length": 0,
+          "display": "No chat message?",
+          "aliases": ["s"]
+        }
+      }
+    }
+  },
+
+
+  "commands": {
+    "ban": {
+      "blueprint": "player-punish",
+      "class": "\\adeynes\\cucumber\\command\\BanCommand",
+      "usage": "/ban <player> <duration>|inf [reason] [-silent|-s]"
+    },
+
+    "banlist": {
+      "blueprint": "paginated-allable",
+      "class": "\\adeynes\\cucumber\\command\\BanlistCommand",
+      "usage": "/banlist [page] [-all|-a]"
+    },
+
+    "pardon": {
+      "blueprint": "one-player-argument",
+      "class": "\\adeynes\\cucumber\\command\\PardonCommand",
+      "usage": "/pardon <player>",
+      "aliases": ["unban"]
+    },
+
+    "blacklist": {
+      "blueprint": "ip-punish",
+      "class": "\\adeynes\\cucumber\\command\\BlacklistCommand",
+      "usage": "/blacklist <player>|<ip> <duration>|inf [reason] [-silent|-s]"
+    },
+
+    "showblacklist": {
+      "blueprint": "paginated-allable",
+      "class": "\\adeynes\\cucumber\\command\\ShowBlacklistCommand",
+      "usage": "/showblacklist [page] [-all|-a]"
+    },
+
+    "unblacklist": {
+      "blueprint": "ip-pardon",
+      "class": "\\adeynes\\cucumber\\command\\UnblacklistCommand",
+      "usage": "/unblacklist <player>|<ip>"
+    },
+
+    "mute": {
+      "blueprint": "player-punish",
+      "class": "\\adeynes\\cucumber\\command\\MuteCommand",
+      "usage": "/mute <player> <duration>|inf [reason] [-silent|-s]"
+    },
+
+    "mutelist": {
+      "blueprint": "paginated-allable",
+      "class": "\\adeynes\\cucumber\\command\\MutelistCommand",
+      "usage": "/mutelist [page] [-all|-a]"
+    },
+
+    "unmute": {
+      "blueprint": "one-player-argument",
+      "class": "\\adeynes\\cucumber\\command\\UnmuteCommand",
+      "usage": "/unmute <player>"
+    },
+
+    "history": {
+      "blueprint": "one-player-argument",
+      "class": "\\adeynes\\cucumber\\command\\HistoryCommand",
+      "usage": "/history <player>"
+    },
+
+    "unmuteall": {
+      "blueprint": "unpunish-all",
+      "class": "\\adeynes\\cucumber\\command\\UnmuteAllCommand",
+      "usage": "/unmuteall [-silent|-s]"
+    },
+
+    "unbanall": {
+      "blueprint": "unpunish-all",
+      "class": "\\adeynes\\cucumber\\command\\UnbanAllCommand",
+      "usage": "/unbanall [-silent|-s]"
+    },
+
+    "unblacklistall": {
+      "blueprint": "unpunish-all",
+      "class": "\\adeynes\\cucumber\\command\\UnblacklistAllCommand",
+      "usage": "/unblacklistall [-silent|-s]"
+    },
+
+    "alts": {
+      "blueprint": "one-player-argument",
+      "class": "\\adeynes\\cucumber\\command\\AltsCommand",
+      "usage": "/ip <player>"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+# DO NOT EDIT THE FOLLOWING LINE
+version: '3.0'
+
+error:
+  # %player%  ////////////   THe player being punished = &d - The moderator = &6 - Time = &c - Reason = &b - Normal text - &7   \\\\\\\\\\\\
+  player-offline: "&l&6» &r&7The player '&d%player%&7' is not online, try again."
+  # %player%
+  player-does-not-exist: "&l&6» &r&7The player '&d%player%&7' has never joined this server."
+  # %severity%
+  unknown-log-severity: "&l&6» &r&7This severity is unknown '&c%severity%'&7."
+  not-ingame: "&l&6» &r&cPlease use this command in-game!"
+  # %argument%
+  invalid-argument: "&l&6» &r&c%argument% &7isn't a valid argument."
+  # %duration%
+  invalid-duration: "&l&6» &r&c%duration% &7isn't a valid duration."
+  ban:
+    # %player%
+    already-banned: "&l&6» &r&6%player% &7is already banned! Someone stole your ban, lol."
+    # %player%
+    not-banned: "&l&6» &r&d%player% &7is not banned!"
+  ipban:
+    # %player%
+    already-banned: "&l&7[&4!&7] - &r&c&b%player% &cis already IP banned!"
+    # %player%
+    not-banned: "&l&7[&4!&7] - &r&c&b%player% &cis not IP banned, check archives for more information."
+  mute:
+    # %player%
+    already-muted: "&l&6» &r&d%player% &7is already muted."
+    # %player%
+    not-muted: "&l&6» &r&d%player% &7is not muted, they are being goooood :D"
+
+success:
+  # %player% %message%
+  rawtell: "&l&6» r&b(&6YOU &r&e-> &d%player%&b) &b%message%"
+  # %message% %severity%
+  log: "&l&6» &r&7You have successfully logged '&b%message%&7'."
+  # %message%
+  alert: '' # the sender will get the alert message
+  # %player% %reason% %expiration%
+  ban: "&l&6» &r&7You have successfully banned &d%player% &7until &c%expiration%&7."
+  banlist:
+    # %page% %count%
+    intro: "&l&6» &r&e&lBan List &r&7(&8Overall &b%count%&7, &8Page &b%page%&7)&r"
+    # %player% %reason% %expiration% %moderator% %time_created% %expired%
+    # %expired% gets replaced with moderation.active or moderation.expired
+    list: "&l&3» &r&d%player% &7was banned by &6%moderator% &7for &c%duration% &7for &b%reason% &8(%expired%&8)"
+  # %player%
+  pardon: "&l&6» &r&7You have successfully unbanned &d%player%&7."
+  # %player% %reason% %expiration%
+  ipban: "&l&6» &r&7You have successfully blacklisted &d%player% &7for &c%duration%&7."
+  ipbanlist:
+    # %page% %count%
+    intro: "&l&6» &r&e&lBlacklists &r&7(&8Overall &b%count%&7,&8 Page &b%page%&7)&r"
+    # %playere% %reason% %expiration% %moderator% %time_created% %expired%
+    # %expired% gets replaced with moderation.active or moderation.expired
+    list: "&l&3» &r&d%player% &7was blacklisted by &6%moderator% &7for &c%duration% \n&7Reason: &b%reason% &8(%expired%&8)"
+  # %ip%
+  ippardon: "&l&6» &r&7You have successfully unbanned &d%player%&7."
+  # %player% %reason% %expiration%
+  mute: "&l&6» &r&7You have successfully muted &d%player% &7for &c%duration%&7, make sure you log it."
+  # %player%
+  unmute: "&l&6» &r&7You have successfully unmuted &d%player%&7!"
+  mutelist:
+    # %page% %count%
+    intro: "&e&lMute List &r&7(&8Overall &b%count%&7,&8 Page &b%page%&7)&r"
+    # %player% %reason% %expiration% %moderator% %time_created% %expired%
+    # %expired% gets replaced with moderation.active or moderation.expired
+    list: "&d%player% &7was muted by &6%moderator% &7for &c%duration% \n&7Reason: &b%reason% &8(%expired%&8)"
+  pardonlist:
+    # %player% %type% %moderator%
+    list: "&d%player% &7got pardoned from a &b%type% &7by &6%moderator%&7."
+  ip:
+    # %player% %ip% %alts%
+    # No need for a color for %alts%, online accounts will be green, others red, with a gray commas
+    alts: "&l&6» &r&d%player%&6's ALTS&e:&3\n %alts%"
+  # %status%
+  vanish: "&7You have successfully toggled the vanish status to &b%status%&7!"
+  history:
+    # %player% %count% %first_joined% %last_joined%
+    intro: "&l&6» &r&d%player%&6's History &7(&8Overall %count%&7)&e:\n&8First Login&7: &3%first_joined%\n&8Latest Login&7: &3%last_joined%"
+
+moderation:
+  ban:
+    # The message that will be displayed on the ban screen
+    # If there are more than 3 lines any subsequent lines will not be displayed
+    # %moderator% %reason% %expiration%
+    message: "&l&6» &l&7You have been banned for: &c%expiration%&7\n&7&lModerator: &r&6%moderator% &7--- &ediscord.gg/infinitymc\n&7&lReason: &r&b%reason%"
+    # The reason that will be displayed if none is provided by the moderator
+    default-reason: "You have not followed the rules that this server follow, which caused you to be punished."
+
+  mute:
+    mute:
+      # %moderator% %reason% %expiration%
+      message: "&l&6» &r&7You have been muted by &6%moderator% &7for &c%expiration%&7.\n&l&6» &r&7Reason: &b%reason%"
+      # The reason that will be displayed if none is provided by the moderator
+      default-reason: "You have not followed the rules that this server follow, which caused you to be punished."
+    unmute:
+      # The message that will be sent to the player (if they are online) when they are manually unmuted
+      # %moderator%
+      manual: "&l&6» &r&7You have been unmuted by &6%moderator%&7!"
+      # The message that will be sent to the player (if they are online) when they are automatically unmuted
+      auto: "&l&6» &r&7You have automatically been &aUNMUTED&7! Your mute period has expired, make sure you follow the rules this time."
+    # The message sent to players if they try to chat while muted
+    # %moderator% %reason% %expiration%
+    chat-attempt: "&l&6» &r&7You are muted for another &c%expiration%&7!"
+
+  # The expiration that is displayed when the punishment does not expired
+  no-expiration: "&l&6» &r&1This ban is PERMANENT. If it's not correct, &3discord.gg/infinitymc&1!"
+
+  # These replace the %expired% tag
+  active: "&cACTIVE"
+  expired: "&aEXPIRED"
+
+broadcast:
+  # The broadcast to the server if a blacklist is done without the -silent option.
+  # Since this command can be used with an IP, and IPs are sensitive info, %player% will be shown as [IP HIDDEN]
+  # if the command is used with an IP of an offline player.
+  # %player% %moderator% %reason% %expiration%
+  blacklist: "&l&6» &r&d%player% &7was blacklisted by &6%moderator%&7 Reason: &b%reason% &7for &c%expiration%&7."
+
+  # The broadcast to the server if a ban is done without the -silent option.
+  # %player% %moderator% %reason% %expiration%
+  ban: "&l&6» &r&d%player% &7was banned by &6%moderator%&7 Reason: &b%reason% &7for &c%expiration%&7."
+
+  # The broadcast to the server if a mute is done without the -silent option.
+  # %player% %moderator% %reason%
+  mute: "&l&6» &r&d%player% &7was muted by &6%moderator%&7 for &b%reason%&7."
+
+  # The broadcast to the server if someone ran /unblacklistall.
+  # %moderator%
+  unblacklistall: '&l&6» &6%moderator% has just unblacklisted EVERYONE!'
+
+  # The broadcast to the server if someone ran /unbanall.
+  # %moderator%
+  unbanall: '&l&6» &6%moderator% has just unbanned EVERYONE!'
+
+  # The broadcast to the server if someone ran /unmuteall.
+  # %moderator%
+  unmuteall: '&l&6» &6%moderator% has just unmuted EVERYONE!'
+
+log:
+  templates:
+    # %type% %time% %...%
+    global: "&l&6» &r%time% %type% | %...%"
+    # %player%
+    join: "&l&6» &r%player% joined"
+    # %player%
+    join-attempt: "&l&6» &r%player% tried joining while banned"
+    # %player%
+    quit: "&l&6» &r%player% quit"
+    # %player% %message%
+    chat: "&l&6» &r%player%: %message%"
+    # %player% %message%
+    chat-attempt: "&l&6» &r[MUTED] %player%: %message"
+    # %player% %command%
+    command: "&l&6» &r%player%: %command%"
+
+# Symbols: https://secure.php.net/manual/en/function.date.php
+time-format: H:i:s \o\n M d Y
